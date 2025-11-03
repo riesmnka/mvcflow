@@ -2,17 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\kategory;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
-class KategoryController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $categories = Category::all();
+        //return $categories;
+        return view('category', compact(var_name: 'categories'));
     }
 
     /**
@@ -34,7 +36,7 @@ class KategoryController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(kategory $kategory)
+    public function show(Category $category)
     {
         //
     }
@@ -42,7 +44,7 @@ class KategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(kategory $kategory)
+    public function edit(Category $category)
     {
         //
     }
@@ -50,7 +52,7 @@ class KategoryController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, kategory $kategory)
+    public function update(Request $request, Category $category)
     {
         //
     }
@@ -58,7 +60,7 @@ class KategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(kategory $kategory)
+    public function destroy(Category $category)
     {
         //
     }
